@@ -53,9 +53,7 @@ If any issues occur, try deleting cache in your browser and refreshing the page.
 
 5. Install `CUDA-Q (v0.13.0)` - this will take a few minutes
 
-6. Navigate to `CUDA-Q and GPU Quantum Environments` 
-
-<img align="right" width ="33%" src="images/image-2.png">
+6. Navigate to `CUDA-Q and GPU Quantum Environments` <img align="right" width ="33%" src="images/image-2.png">
 
 7. Once installation is complete, open the `labs_tutorial.ipynb` notebook
 
@@ -78,15 +76,13 @@ You will now get to run your code on real GPUs using NVIDIA's Brev Platform. Don
 ### Steps **ONLY** to be completed by the **GPU Acceleration PIC**:
 The designated GPU Acceleration PIC will create an organization in Brev, redeem the $20 coupon code, and provide their team members with access. 
 
-1. Go to http://brev.nvidia.com and input your email to create an account <img style="float: right;" width ="9%" src="images/image-3.png">
+1. Go to http://brev.nvidia.com and input your email to create an account 
+
+<img align="right" width ="10%" src="images/image-3.png">
 
 2. Create a new Brev organization by clicking on the building icon in the top right corner and selecting `+ Create a new organization.` 
 
-3. Name your organization in the format: `MIT-<team_name_here>` Example: `MIT-qrazy-qubits`
-
-<img style="float: right;" width ="49%" src="images/image-5.png">
-
-
+3. Name your organization in the format: `MIT-<team_name_here>` Example: `MIT-qrazy-qubits` <img align="right" width ="39%" src="images/image-5.png">
 
 4. Go to the `Team` tab located at the top. 
 
