@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(if not exist \"C:\\\\Users\\\\user\\\\Desktop\\\\Codes\\\\2026-NVIDIA\\\\team-submissions\\\\tests\" mkdir \"C:\\\\Users\\\\user\\\\Desktop\\\\Codes\\\\2026-NVIDIA\\\\team-submissions\\\\tests\")",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Phase 1 deliverables: PRD, AI Report, and Test Suite\n\n- Add PRD.md with shared exploration cache architecture design\n- Add AI_REPORT.md documenting AI-assisted development workflow\n- Add TEST_SUITE.md with verification strategy documentation\n- Add comprehensive test suite \\(bit-packing, energy, cache, MTS, quantum, integration\\)\n- Remove template files replaced by actual submissions\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)"
+    ]
+  }
+}
