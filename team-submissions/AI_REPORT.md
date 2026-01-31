@@ -1,7 +1,8 @@
 # AI Methodology Report
 
-**Project Name:** LABS-SharedCache
-**Team Name:** [Your Team Name]
+Project Name: LABS-Shared-Cache-Distribution
+
+Team Name: Exception Handler
 
 ---
 
