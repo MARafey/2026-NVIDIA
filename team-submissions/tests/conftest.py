@@ -37,15 +37,18 @@ def small_sequences():
 @pytest.fixture
 def known_optima():
     """
-    Known optimal LABS solutions.
+    Known optimal LABS solutions (verified via brute force for small N).
     Format: {N: (optimal_energy, [one optimal sequence])}
     """
     return {
-        3: (1, [1, 1, -1]),
-        5: (2, [1, 1, 1, -1, 1]),
-        7: (4, [1, 1, 1, -1, -1, 1, -1]),
-        11: (12, [1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1]),
-        13: (18, [1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1]),
+        3: (1, [-1, 1, 1]),
+        4: (2, [-1, 1, 1, 1]),
+        5: (2, [1, -1, 1, 1, 1]),
+        6: (7, [1, -1, 1, 1, 1, 1]),
+        7: (3, [-1, 1, -1, -1, 1, 1, 1]),
+        8: (8, [-1, 1, -1, -1, 1, 1, 1, 1]),
+        9: (12, [1, -1, 1, -1, -1, 1, 1, 1, 1]),
+        10: (13, [1, -1, 1, -1, -1, 1, 1, 1, 1, 1]),
     }
 
 

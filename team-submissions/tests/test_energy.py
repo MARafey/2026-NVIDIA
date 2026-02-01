@@ -158,9 +158,9 @@ class TestKnownOptima:
         assert compute_labs_energy(seq) == 2
 
     def test_n7_optimal(self):
-        """N=7 optimal energy is 4."""
-        seq = [1, 1, 1, -1, -1, 1, -1]
-        assert compute_labs_energy(seq) == 4
+        """N=7 optimal energy is 3."""
+        seq = [-1, 1, -1, -1, 1, 1, 1]
+        assert compute_labs_energy(seq) == 3
 
 
 # -----------------------------------------------------------------------------
