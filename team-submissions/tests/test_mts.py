@@ -260,7 +260,7 @@ class TestMTSGroundTruth:
     @pytest.mark.parametrize("n,expected_optimal", [
         (3, 1),
         (5, 2),
-        (7, 4),
+        (7, 3),  # Optimal for N=7 is 3, not 4
     ])
     def test_finds_small_n_optima(self, n, expected_optimal):
         """MTS finds known optima for small N."""

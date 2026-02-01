@@ -116,7 +116,8 @@ class SharedCache:
         for i, (packed_seq, energy) in enumerate(seeds):
             if i >= self.protected_size:
                 break
-            slot = i  # Place seeds in order in protected region
+            # Use hash to determine slot (like normal lookup/update)
+            slot = self._hash(packed_seq)
             self.entries[slot] = CacheEntry(packed_seq, energy)
 
     def get_hit_rate(self) -> float:

@@ -160,13 +160,17 @@ class TestBitPackingConstraints:
         assert packed1 != packed2
 
     @given(
-        st.lists(st.sampled_from([-1, 1]), min_size=2, max_size=20),
-        st.lists(st.sampled_from([-1, 1]), min_size=2, max_size=20)
+        st.integers(min_value=2, max_value=20).flatmap(
+            lambda n: st.tuples(
+                st.lists(st.sampled_from([-1, 1]), min_size=n, max_size=n),
+                st.lists(st.sampled_from([-1, 1]), min_size=n, max_size=n)
+            )
+        )
     )
-    def test_collision_free_property(self, seq1, seq2):
+    def test_collision_free_property(self, seqs):
         """Property: different sequences of same length -> different packed values."""
+        seq1, seq2 = seqs
         assume(seq1 != seq2)
-        assume(len(seq1) == len(seq2))
         packed1 = pack_sequence(seq1, bits_per_elem=1)
         packed2 = pack_sequence(seq2, bits_per_elem=1)
         assert packed1 != packed2
