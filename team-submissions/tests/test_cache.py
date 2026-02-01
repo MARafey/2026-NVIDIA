@@ -257,7 +257,8 @@ class TestProtectedRegion:
         """Seeds are placed in protected region."""
         cache = SharedCache(size=100, protected_ratio=0.25)
 
-        seeds = [(i * 100, float(i)) for i in range(10)]
+        # Use seeds that hash to different slots (0, 1, 2, ... 9)
+        seeds = [(i, float(i * 10)) for i in range(10)]
         cache.seed(seeds)
 
         # All seeds should be retrievable
