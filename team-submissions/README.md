@@ -5,16 +5,72 @@ The Project Lead should fork this repository and share the forked repository lin
 
 **Phase 1 Submission (Due 10pm eastern Sat Jan 31):**
 (To be judged to obtain access to GPUs with Brev credits)
-* [ ] **Tutorial Notebook:** Completed [01_quantum_enhanced_optimization_LABS.ipynb](https://github.com/iQuHACK/2026-NVIDIA/blob/main/tutorial_notebook/01_quantum_enhanced_optimization_LABS.ipynb) including your "Self-Validation" section.
-* [ ] **PRD:** `PRD.md` defining your plan.  See [Milestone 1 in the challenge description]([LABS-challenge-Phase1.md](https://github.com/iQuHACK/2026-NVIDIA/blob/main/LABS-challenge-Phase1.md)) and the [PRD-template.md](PRD-template.md) file.
-* [ ] **Notify the judges in discord:** DM `Monica-NVIDIA`, `Linsey-NV Mentor`, and `Iman_nvidia` that your phase 1 deliverables are ready to be judged.   
+* [*] **Tutorial Notebook:** Completed [01_quantum_enhanced_optimization_LABS.ipynb](https://github.com/iQuHACK/2026-NVIDIA/blob/main/tutorial_notebook/01_quantum_enhanced_optimization_LABS.ipynb) including your "Self-Validation" section.
+* [*] **PRD:** `PRD.md` defining your plan.  See [Milestone 1 in the challenge description]([LABS-challenge-Phase1.md](https://github.com/iQuHACK/2026-NVIDIA/blob/main/LABS-challenge-Phase1.md)) and the [PRD-template.md](PRD-template.md) file.
+* [*] **Notify the judges in discord:** DM `Monica-NVIDIA`, `Linsey-NV Mentor`, and `Iman_nvidia` that your phase 1 deliverables are ready to be judged.   
 
 **Phase 2 Submission (Due 10am eastern Sun Feb 1):**
 
-* [ ] **Final Code:** Notebooks and scripts for the Milestone 3 implementation. Add these files to a folder in this directory.  Include a README.md to guide the judges if you have multiple files.
-* [ ] **Test Suite:** `tests.py` or other documentation or scripts used for verifying your work. 
-* [ ] **AI Report:** `AI_REPORT.md` (See [AI_REPORT-template.md](AI_REPORT-template.md)).
-* [ ] **Presentation:** Slides (Live) or MP4 (Remote).
+* [x] **Final Code:** Complete implementation in `src/` directory:
+  - `labs_solver/` - Core modules (energy.py, mts.py, quantum.py, energy_gpu.py, mts_gpu.py, utils.py)
+  - `run_phase2.py` - Complete Phase 2 demonstration script
+  - `run_complete_benchmark.py` - Comprehensive benchmarking with plots
+  - `benchmark_gpu.py` - GPU performance benchmarks
+  - `validate_cpu.py` - CPU validation script
+* [x] **Test Suite:** `tests/` directory with comprehensive pytest tests:
+  - `test_energy.py` - Energy calculation tests
+  - `test_bit_packing.py` - Bit-packing round-trip tests
+  - `test_cache.py` - Shared cache tests
+  - `test_mts.py` - MTS algorithm tests
+  - `test_quantum.py` - Quantum sampling tests
+  - `test_integration.py` - Full pipeline integration tests
+  - See `TEST_SUITE.md` for detailed documentation
+* [x] **AI Report:** `AI_REPORT.md` - Complete AI methodology report
+* [ ] **Presentation:** Slides (Live) or MP4 (Remote)
+
+## Running the Benchmarks
+
+### On Brev GPU:
+
+```bash
+# SSH into the Brev instance
+brev shell nvidia-iquhack-2026-challenge-519c62
+
+# Navigate to the project
+cd /path/to/2026-NVIDIA/team-submissions/src
+
+# Run the complete benchmark suite (generates plots and report)
+python run_complete_benchmark.py
+
+# For a quick benchmark (less thorough but faster):
+python run_complete_benchmark.py --quick
+
+# Results will be saved to: team-submissions/results/
+# - BENCHMARK_REPORT.md - Comprehensive markdown report
+# - benchmark_results.json - Raw data
+# - time_comparison.png - Execution time comparison
+# - gpu_speedup.png - GPU acceleration analysis
+# - cache_hit_rate.png - Cache effectiveness
+# - quantum_circuit_complexity.png - Circuit scaling
+# - solution_quality.png - Approximation ratios
+# - merit_factor.png - Solution quality metrics
+```
+
+### Running Individual Components:
+
+```bash
+# Run Phase 2 demo (shows all three steps)
+python run_phase2.py
+
+# Run GPU benchmarks only
+python benchmark_gpu.py
+
+# Run CPU validation
+python validate_cpu.py
+
+# Run test suite
+python -m pytest ../tests/ -v
+```
 
 ## Evaluation Criteria: How You Will Be Graded
 
