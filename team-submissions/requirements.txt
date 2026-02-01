@@ -1,0 +1,16 @@
+# Core dependencies
+numpy>=1.21.0
+
+# GPU acceleration (optional - install on GPU machine)
+cupy-cuda12x>=12.0.0  # For CUDA 12.x - adjust version for your CUDA
+
+# Testing
+pytest>=7.0.0
+hypothesis>=6.0.0
+
+# Visualization
+matplotlib>=3.5.0
+
+# CUDA-Q is installed separately via:
+# pip install cuda-quantum
+# or from NVIDIA's package repository
